@@ -1,0 +1,233 @@
+<!doctype html><html lang="en"><head>
+
+<!-- DAZORI GRID browser tab icon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%2300f5ff'/%3E%3Cstop offset='.52' stop-color='%234287ff'/%3E%3Cstop offset='1' stop-color='%23ff3cac'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%2303050b'/%3E%3Cpath d='M12 42 25 15h12l15 27H41l-4-8H26l-4 8z' fill='none' stroke='url(%23g)' stroke-width='5' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='32' r='25' fill='none' stroke='%2300f5ff' stroke-opacity='.25'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#03050b">
+
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>⚡ DAZORI GRID — LIVE</title>
+<style>
+:root{--bg:#020307;--p:#090d14;--l:#263442;--c:#00e5ff;--g:#32f59a;--v:#8b5cf6;--m:#81939e;--pink:#ff3cac;--t:#f1f7ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 12% 8%,#10183a 0,transparent 28%),radial-gradient(circle at 88% 18%,#24102f 0,transparent 24%),linear-gradient(135deg,#020307,#060a10 48%,#030408);color:var(--t);font-family:Segoe UI,Arial,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.14;background-image:linear-gradient(#00e5ff20 1px,transparent 1px),linear-gradient(90deg,#8b5cf612 1px,transparent 1px);background-size:38px 38px;mask-image:linear-gradient(to bottom,#000,transparent 92%)}body:after{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(transparent 50%,#00e5ff05 50%);background-size:100% 4px;mix-blend-mode:screen;opacity:.22}
+header{position:sticky;top:0;z-index:10;background:#05070af0;border-bottom:1px solid var(--l);backdrop-filter:blur(16px)}
+.wrap{width:min(1400px,94vw);margin:auto}.nav{min-height:74px;display:flex;align-items:center;gap:22px}.logo{font-size:22px;font-weight:950;letter-spacing:2px}.logo b{color:var(--c)}.logo small{display:block;color:#60747e;font-size:8px;letter-spacing:4px}nav{display:flex;gap:3px;flex:1}nav button,.filter{background:linear-gradient(180deg,#101722,#080c12);border:1px solid #293948;color:#a8b9c4;padding:10px 13px;cursor:pointer;border-radius:7px;box-shadow:inset 0 1px #ffffff0b,0 5px 16px #0008;transition:.18s}nav button:hover,.filter:hover{transform:translateY(-2px);border-color:#00e5ff80;color:#fff;box-shadow:0 0 18px #00e5ff22,inset 0 1px #ffffff12}nav button:active,.filter:active{transform:translateY(0)}.filter.on{font-weight:900;color:#061014;background:linear-gradient(135deg,var(--c),#6cf7ff);border-color:#7df8ff;box-shadow:0 0 22px #00e5ff55,inset 0 1px #fff8}.search{display:flex;border:1px solid var(--l);background:#080c10;border-radius:5px}.search input{width:210px;background:none;border:0;outline:0;color:#fff;padding:10px}.search button{border:0;background:#092027;color:var(--c);font-weight:800;padding:0 12px}
+main{padding:30px 0 60px}.hero{position:relative;overflow:hidden;border:1px solid #263d52;padding:30px;background:linear-gradient(135deg,#0b1520 0%,#080b12 45%,#160b1d 100%);box-shadow:0 20px 55px #0009,inset 0 1px #ffffff12;min-height:270px;display:flex;flex-direction:column;justify-content:end}.k{font-size:10px;color:var(--c);font-weight:900;letter-spacing:2px}.hero:after{content:"";position:absolute;inset:auto -10% -70px;height:130px;background:radial-gradient(ellipse,#00e5ff18,transparent 65%);pointer-events:none}.hero h1{font-size:clamp(38px,6vw,72px);line-height:.9;margin:13px 0;letter-spacing:-3px}.hero p{color:var(--m);max-width:720px}.status{display:flex;gap:12px;align-items:center;margin-top:10px;color:var(--g);font-size:12px}.dot{width:8px;height:8px;background:var(--g);border-radius:50%;box-shadow:0 0 15px var(--g)}
+.refresh-note{margin:16px 0 20px;padding:13px 17px;border:1px solid #432c67;background:linear-gradient(90deg,#100b1b,#080b12,#11102a);box-shadow:inset 0 1px #ffffff0b,0 10px 30px #0007;color:#d8c9ff;text-align:center;font-size:12px;font-weight:950;letter-spacing:1.6px;text-transform:uppercase}.refresh-note span{color:#00e5ff}.toolbar{margin:20px 0;display:flex;gap:8px;flex-wrap:wrap}.filter{border-color:var(--l);background:#080c10}.filter.on{font-weight:800}.sectionhead{display:flex;justify-content:space-between;align-items:end;margin:26px 0 13px}.sectionhead h2{margin:0;font-size:24px}.sectionhead span{font-size:11px;color:var(--m)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.card{position:relative;overflow:hidden;border:1px solid #263745;background:linear-gradient(145deg,#101722 0%,#080c12 55%,#120a18 100%);padding:20px;box-shadow:inset 0 1px #ffffff0b,0 12px 28px #0008;min-height:205px;display:flex;flex-direction:column;cursor:pointer;transition:.18s}.card:before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c),var(--v),var(--pink));opacity:.75}.card:hover{border-color:#00d9ff80;transform:translateY(-4px);box-shadow:0 15px 35px #000a,0 0 24px #00e5ff14}.tag{font-size:9px;letter-spacing:1px;color:#8cf7ff;border:1px solid #235968;background:#06171d;padding:6px 9px;width:max-content;border-radius:5px;box-shadow:inset 0 0 12px #00e5ff0b}.card h3{font-size:18px;line-height:1.25;margin:14px 0 8px}.desc{font-size:12px;color:#9cacb5;line-height:1.5;margin:0 0 16px}.meta{font-size:10px;color:#637680;margin-top:auto}.loading,.empty{padding:45px;text-align:center;border:1px dashed #25343c;color:#71848e}.error{color:#ff738b}footer{margin-top:20px;border-top:1px solid #263746;padding:35px 0 42px;color:#60747e;font-size:11px;background:linear-gradient(180deg,#05070b,#020307)}.owner{text-align:center;margin-top:18px;padding:25px 10px;border:1px solid #3b2757;background:linear-gradient(135deg,#0d0916,#070a10,#100817);box-shadow:inset 0 1px #ffffff0b,0 12px 35px #0008}.owner-label{font-size:10px;letter-spacing:4px;color:#718491;font-weight:900}.owner-name{margin-top:9px;font-size:clamp(25px,5vw,48px);font-weight:1000;letter-spacing:2px;background:linear-gradient(90deg,#00e5ff,#8b5cf6,#ff3cac);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 30px #8b5cf633}.modal{display:none;position:fixed;inset:0;z-index:50;background:#000c;backdrop-filter:blur(7px);padding:6vh 4vw}.modal.open{display:block}.modalbox{max-width:850px;max-height:88vh;overflow:auto;margin:auto;background:#080c10;border:1px solid #2a4651;padding:30px}.close{float:right;background:#0c1216;border:1px solid #31414a;color:#9badb5;padding:8px;cursor:pointer}.modal h2{font-size:36px;line-height:1.1}.modal p{color:#a9b6bd;line-height:1.7}.modal a{color:var(--c)}
+@media(max-width:1000px){nav{display:none}.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.nav{flex-wrap:wrap;padding:13px 0}.search{width:100%}.search input{width:100%}.grid{grid-template-columns:1fr}.hero{min-height:300px;padding:22px}.hero:after{content:"";position:absolute;inset:auto -10% -70px;height:130px;background:radial-gradient(ellipse,#00e5ff18,transparent 65%);pointer-events:none}.hero h1{font-size:42px}}
+</style>
+<style>
+:root{
+  --cyan:#00f5ff; --blue:#4287ff; --violet:#9b5cff; --pink:#ff3cac;
+  --green:#00ff9d; --orange:#ff9d3c; --bg:#03050b; --panel:#080c16;
+}
+body{
+  background:
+    radial-gradient(circle at 10% 8%,rgba(0,245,255,.13),transparent 25%),
+    radial-gradient(circle at 90% 18%,rgba(155,92,255,.14),transparent 28%),
+    radial-gradient(circle at 50% 100%,rgba(255,60,172,.08),transparent 35%),
+    #03050b !important;
+  color:#eef7ff;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background:
+    linear-gradient(rgba(0,245,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(155,92,255,.035) 1px,transparent 1px);
+  background-size:42px 42px;
+  mask-image:linear-gradient(to bottom,black,transparent 92%);
+}
+header,.nav,.topbar,.panel,.card,.news-card,.game-card,.section,.hero,.modal-content{
+  border-color:rgba(0,245,255,.24) !important;
+  box-shadow:0 0 0 1px rgba(155,92,255,.035),0 16px 45px rgba(0,0,0,.42),inset 0 1px rgba(255,255,255,.035);
+}
+button,.filter,.nav button,.tab,.chip,.search-btn{
+  border:1px solid rgba(0,245,255,.38) !important;
+  background:linear-gradient(135deg,rgba(0,245,255,.10),rgba(155,92,255,.13)) !important;
+  color:#eafcff !important;
+  box-shadow:0 0 18px rgba(0,245,255,.08), inset 0 0 14px rgba(155,92,255,.05);
+  transition:.2s ease !important;
+}
+button:hover,.filter:hover,.nav button:hover,.tab:hover,.chip:hover,.search-btn:hover{
+  transform:translateY(-2px);
+  border-color:var(--cyan) !important;
+  box-shadow:0 0 22px rgba(0,245,255,.20),0 0 40px rgba(155,92,255,.10);
+}
+h1,h2,h3,.logo,.brand{
+  text-shadow:0 0 14px rgba(0,245,255,.22),0 0 28px rgba(155,92,255,.12);
+}
+.section-title,.title{
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.cyber-divider{
+  height:2px;margin:28px 0;
+  background:linear-gradient(90deg,transparent,var(--cyan),var(--violet),var(--pink),transparent);
+  box-shadow:0 0 14px rgba(0,245,255,.45);
+}
+.ep-section{
+  margin:44px 0;padding:28px;
+  border:1px solid rgba(0,245,255,.18);
+  border-radius:20px;
+  background:linear-gradient(145deg,rgba(8,12,22,.96),rgba(14,8,28,.88));
+  box-shadow:0 20px 60px rgba(0,0,0,.35),inset 0 1px rgba(255,255,255,.04);
+}
+.ep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ep-card{
+  padding:20px;border-radius:16px;
+  background:linear-gradient(145deg,rgba(12,19,31,.92),rgba(25,11,38,.82));
+  border:1px solid rgba(155,92,255,.28);
+}
+.ep-card strong{display:block;color:#fff;font-size:1.05rem;margin-bottom:8px}
+.ep-card span{color:#9bb1c9;font-size:.9rem}
+.live-wall{
+  min-height:230px;border-radius:22px;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  background:
+    radial-gradient(circle at 20% 40%,rgba(0,245,255,.24),transparent 22%),
+    radial-gradient(circle at 80% 60%,rgba(255,60,172,.22),transparent 24%),
+    radial-gradient(circle at 50% 50%,rgba(155,92,255,.18),transparent 34%),
+    #040711;
+  border:1px solid rgba(0,245,255,.3);
+  box-shadow:inset 0 0 70px rgba(0,0,0,.7),0 0 35px rgba(0,245,255,.09);
+}
+.live-wall:before{
+  content:"";position:absolute;inset:-50%;
+  background:conic-gradient(from 0deg,transparent 0 18%,rgba(0,245,255,.10) 22%,transparent 28%,rgba(255,60,172,.08) 55%,transparent 65%);
+  animation:spin 16s linear infinite;
+}
+.live-wall:after{
+  content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 5px);
+  pointer-events:none;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.wall-content{position:relative;z-index:2}
+.wall-title{font-size:clamp(2rem,5vw,4.5rem);font-weight:950;letter-spacing:.1em;color:#fff}
+.wall-sub{color:#8ffaff;letter-spacing:.18em}
+.refresh-warning{
+  margin:26px 0;padding:18px 22px;border-radius:14px;text-align:center;
+  border:1px solid rgba(255,157,60,.55);
+  background:linear-gradient(90deg,rgba(255,157,60,.09),rgba(255,60,172,.08),rgba(0,245,255,.08));
+  color:#ffe5c5;font-weight:800;letter-spacing:.06em;
+  box-shadow:0 0 25px rgba(255,157,60,.07);
+}
+.owner{
+  margin-top:55px;padding:52px 20px;text-align:center;
+  border-top:1px solid rgba(0,245,255,.22);
+  background:linear-gradient(180deg,transparent,rgba(0,245,255,.035));
+}
+.owner-label{font-size:.8rem;letter-spacing:.35em;color:#7891a9}
+.owner-name{
+  margin-top:12px;font-size:clamp(2rem,6vw,5rem);font-weight:1000;
+  letter-spacing:.08em;
+  background:linear-gradient(90deg,var(--cyan),var(--blue),var(--violet),var(--pink));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 18px rgba(0,245,255,.22));
+}
+.contact-line{margin-top:16px;color:#b9c9da}
+@media(max-width:850px){.ep-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ep-grid{grid-template-columns:1fr}.ep-section{padding:18px}}
+</style>
+</head><body>
+<header><div class="wrap nav"><a class="logo" href="#">DAZORI <b>GRID</b><small>LIVE ESPORTS NETWORK</small></a>
+<nav><button onclick="topage('latest')">NEWS</button><button onclick="topage('latest')">UPDATES</button><button onclick="topage('games')">GAMES</button></nav>
+<div class="search"><input id="search" placeholder="Search live news…"><button onclick="searchNow()">SEARCH</button></div></div></header>
+<main class="wrap">
+<section class="hero"><div class="k">DAZORI GRID / LIVE FEED</div><h1>REAL NEWS.<br>UPDATED AUTOMATICALLY.</h1><p>Current gaming and esports stories collected from public RSS feeds. New stories appear when the source feeds change.</p><div class="status"><i class="dot"></i><span id="status">CONNECTING…</span><span id="updated"></span></div></section>
+<div class="refresh-note">⚡ <span>REFRESH THIS PAGE</span> TO PULL THE LATEST AVAILABLE GAMING &amp; ESPORTS UPDATES — LIVE FEEDS ALSO AUTO-SYNC EVERY 5 MINUTES. ⚡</div>
+<div class="toolbar" id="filters"></div>
+<section id="latest"><div class="sectionhead"><h2>Latest News</h2><span id="count">—</span></div><div id="news" class="grid"><div class="loading">Connecting to live news sources…</div></div></section>
+<section id="games"><div class="sectionhead"><h2>Game Coverage</h2><span>LIVE SEARCH CHANNELS</span></div><div class="toolbar" id="gameButtons"></div></section>
+</main><footer><div class="wrap">DAZORI GRID LIVE · Feed timestamps and article links come from source feeds. · Auto-refresh: 5 min<div class="owner"><div class="owner-label">THIS WEBSITE IS OWNED BY</div><div class="owner-name">MOOD2RBU X SHAURYA</div></div></div></footer>
+<div class="modal" id="modal"><div class="modalbox"><button class="close" onclick="closeModal()">CLOSE ×</button><div id="article"></div></div></div>
+<script>
+const proxy="https://api.rss2json.com/v1/api.json?rss_url=";
+const sources=[
+["Esports.gg","https://esports.gg/feed/"],
+["VALORANT","https://news.google.com/rss/search?q=VALORANT+esports&hl=en&gl=US&ceid=US:en"],
+["CS2","https://news.google.com/rss/search?q=Counter-Strike+2+esports&hl=en&gl=US&ceid=US:en"],
+["Rocket League","https://news.google.com/rss/search?q=Rocket+League+esports&hl=en&gl=US&ceid=US:en"],
+["PUBG","https://news.google.com/rss/search?q=PUBG+esports&hl=en&gl=US&ceid=US:en"],
+["Dota 2","https://news.google.com/rss/search?q=Dota+2+esports&hl=en&gl=US&ceid=US:en"],
+["Overwatch","https://news.google.com/rss/search?q=Overwatch+esports&hl=en&gl=US&ceid=US:en"],
+["Fortnite","https://news.google.com/rss/search?q=Fortnite+esports&hl=en&gl=US&ceid=US:en"],
+["League of Legends","https://news.google.com/rss/search?q=League+of+Legends+esports&hl=en&gl=US&ceid=US:en"]];
+const games=["ALL","VALORANT","CS2","ROCKET LEAGUE","PUBG","DOTA 2","OVERWATCH","FORTNITE","LEAGUE OF LEGENDS"];let items=[],active="ALL",visible=[];
+const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+function gameOf(t,s){let x=(t+" "+s).toLowerCase();if(x.includes("valorant"))return"VALORANT";if(x.includes("counter-strike")||x.includes("cs2")||x.includes("cs 2"))return"CS2";if(x.includes("rocket league"))return"ROCKET LEAGUE";if(x.includes("pubg"))return"PUBG";if(x.includes("dota"))return"DOTA 2";if(x.includes("overwatch"))return"OVERWATCH";if(x.includes("fortnite"))return"FORTNITE";if(x.includes("league of legends")||x.includes("lck")||x.includes("lpl")||x.includes("lec"))return"LEAGUE OF LEGENDS";return s.toUpperCase()}
+function ago(d){let n=Date.now()-new Date(d).getTime(),m=Math.floor(n/60000);if(m<1)return"just now";if(m<60)return m+" min ago";let h=Math.floor(m/60);if(h<24)return h+" hr ago";return Math.floor(h/24)+" d ago"}
+function renderFilters(){filters.innerHTML=games.map(g=>`<button class="filter ${active===g?"on":""}" onclick="setFilter('${g}')">${g}</button>`).join("");gameButtons.innerHTML=games.slice(1).map(g=>`<button class="filter" onclick="setFilter('${g}')">${g}</button>`).join("")}
+function render(){let q=search.value.trim().toLowerCase();visible=items.filter(x=>(active==="ALL"||x.game===active)&&(!q||(x.title+" "+x.game+" "+x.source).toLowerCase().includes(q)));count.textContent=visible.length+" current stories";news.innerHTML=visible.length?visible.map((x,i)=>`<article class="card" onclick="openArticle(${i})"><span class="tag">${esc(x.game)}</span><h3>${esc(x.title)}</h3><p class="desc">${esc(x.description||"Open the original article for the full story.")}</p><div class="meta">${esc(x.source)} · ${ago(x.pubDate)}</div></article>`).join(""):`<div class="empty">No current stories match this filter.</div>`}
+function setFilter(g){active=g;renderFilters();render();document.getElementById("latest").scrollIntoView({behavior:"smooth"})}
+async function getFeed(name,url){try{let r=await fetch(proxy+encodeURIComponent(url),{cache:"no-store"});let j=await r.json();return(j.items||[]).slice(0,20).map(x=>({title:x.title,description:(x.description||"").replace(/<[^>]*>/g,"").slice(0,240),link:x.link,pubDate:x.pubDate,source:name,game:gameOf(x.title,name)}))}catch(e){return[]}}
+async function load(){status.textContent="SYNCING LIVE SOURCES…";let rs=await Promise.all(sources.map(s=>getFeed(s[0],s[1]))),map=new Map();rs.flat().forEach(x=>{if(x.link&&!/betting|sportsbook|odds|casino|gambling|wager/i.test(x.title+" "+x.description))map.set(x.link,x)});items=[...map.values()].sort((a,b)=>new Date(b.pubDate)-new Date(a.pubDate));status.textContent=items.length?"● LIVE — FEEDS CONNECTED":"FEEDS UNAVAILABLE";updated.textContent=" · "+new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"});render()}
+function searchNow(){render();document.getElementById("latest").scrollIntoView({behavior:"smooth"})}
+search.addEventListener("keydown",e=>{if(e.key==="Enter")searchNow()});
+function openArticle(i){let x=visible[i];article.innerHTML=`<div class="k">${esc(x.game)} · ${esc(x.source)}</div><h2>${esc(x.title)}</h2><p>${esc(x.description||"")}</p><p><b>Published:</b> ${esc(new Date(x.pubDate).toLocaleString())}</p><p><a href="${esc(x.link)}" target="_blank" rel="noopener">OPEN ORIGINAL ARTICLE →</a></p>`;modal.classList.add("open")}
+function closeModal(){modal.classList.remove("open")}function topage(id){document.getElementById(id).scrollIntoView({behavior:"smooth"})}
+renderFilters();load();setInterval(load,300000);
+</script>
+<div class="cyber-divider"></div>
+
+<section class="ep-section">
+  <div class="section-title">LIVE COMMAND DECK</div>
+  <div class="ep-grid">
+    <div class="ep-card"><strong>⚡ BREAKING FEED</strong><span>Newest esports stories are pulled from live sources and sorted by recency.</span></div>
+    <div class="ep-card"><strong>◉ LIVE STATUS</strong><span>Monitor current stories, tournaments and competitive activity from one dashboard.</span></div>
+    <div class="ep-card"><strong>↻ AUTO SYNC</strong><span>The feed checks for new available stories automatically every 5 minutes.</span></div>
+    <div class="ep-card"><strong>◈ PATCH INTEL</strong><span>Keep an eye on game updates, balance changes and competitive developments.</span></div>
+    <div class="ep-card"><strong>▣ TOURNAMENT RADAR</strong><span>Follow major event announcements and competitive tournament coverage.</span></div>
+    <div class="ep-card"><strong>⌕ GLOBAL SEARCH</strong><span>Search the live feed by game, headline, source or esports topic.</span></div>
+  </div>
+</section>
+
+<section class="ep-section">
+  <div class="section-title">GAME UNIVERSE</div>
+  <div class="ep-grid">
+    <div class="ep-card"><strong>VALORANT</strong><span>Competitive news • Champions • Patches • Agents • Teams</span></div>
+    <div class="ep-card"><strong>COUNTER-STRIKE 2</strong><span>Tournaments • Teams • Matches • Updates • Competitive news</span></div>
+    <div class="ep-card"><strong>ROCKET LEAGUE</strong><span>Esports events • Competitive updates • Tournament coverage</span></div>
+    <div class="ep-card"><strong>PUBG</strong><span>Esports events • Updates • Competitive ecosystem</span></div>
+    <div class="ep-card"><strong>DOTA 2</strong><span>Major events • Competitive news • Tournament updates</span></div>
+    <div class="ep-card"><strong>OVERWATCH</strong><span>Competitive news • Updates • Tournament coverage</span></div>
+    <div class="ep-card"><strong>FORTNITE</strong><span>Competitive events • Updates • Esports stories</span></div>
+    <div class="ep-card"><strong>LEAGUE OF LEGENDS</strong><span>Competitive news • Events • Team and tournament coverage</span></div>
+    <div class="ep-card"><strong>APEX LEGENDS</strong><span>Competitive gaming news and event coverage</span></div>
+  </div>
+</section>
+
+<section class="ep-section">
+  <div class="section-title">ESPORTS INTELLIGENCE</div>
+  <div class="ep-grid">
+    <div class="ep-card"><strong>TEAM WATCH</strong><span>Track roster stories, results and major team developments through the live news feed.</span></div>
+    <div class="ep-card"><strong>PLAYER WATCH</strong><span>Follow player-related competitive stories and roster developments.</span></div>
+    <div class="ep-card"><strong>META WATCH</strong><span>Discover stories about balance changes, strategies and competitive trends.</span></div>
+    <div class="ep-card"><strong>INDUSTRY RADAR</strong><span>Major developments shaping the competitive gaming ecosystem.</span></div>
+    <div class="ep-card"><strong>PATCH RADAR</strong><span>Find newly published game update and patch-related coverage.</span></div>
+    <div class="ep-card"><strong>EVENT RADAR</strong><span>Surface tournament announcements and event coverage as they appear.</span></div>
+  </div>
+</section>
+
+<section class="ep-section">
+  <div class="section-title">CYBER LIVE WALL</div>
+  <div class="live-wall">
+    <div class="wall-content">
+      <div class="wall-title">DAZORI GRID</div>
+      <div class="wall-sub">LIVE • COMPETE • UPDATE • REPEAT</div>
+    </div>
+  </div>
+</section>
+
+<div class="refresh-warning">
+  ⚠ REFRESH THIS PAGE TO PULL THE LATEST AVAILABLE GAMING & ESPORTS UPDATES
+  <br><small style="opacity:.75">LIVE FEEDS ALSO AUTO-SYNC PERIODICALLY</small>
+</div>
+
+<section class="owner">
+  <div class="owner-label">THIS WEBSITE IS OWNED BY</div>
+  <div class="owner-name">MOOD2RBU X SHAURYA</div>
+  <div class="contact-line">✉ sawhneyshaurya500@gmail.com &nbsp; • &nbsp; ◈ shaurya.s0143</div>
+</section>
+
+</body></html>
